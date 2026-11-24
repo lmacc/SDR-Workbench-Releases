@@ -100,7 +100,7 @@ takes you straight there.*
 
 *Put any picture you like behind the bandscope.*
 
-There is much more: a logbook, a DX cluster with alerts, CW, RTTY and PSK
+There is much more: power calibration for your own radio, a logbook, a DX cluster with alerts, CW, RTTY and PSK
 decoding, FreeDV, recording and playback, KiwiSDR and UberSDR receivers
 tuned along with your radio, CAT and TCI for your other programs, and
 operating from away from home through a Raspberry Pi.
@@ -140,6 +140,38 @@ From the [latest release](https://github.com/lmacc/SDR-Workbench-Releases/releas
 The user guide is inside the application, under **HELP**, then
 **User guide**. It covers every control and how to set everything up, with
 pictures.
+
+## Calibrating your radio
+
+Some radios need no calibrating at all, and the others start from sensible
+figures. The guide's chapter 26 explains each one step by step.
+
+- **Kenwood TS-890S and TS-990S, FLEX-6000 and 8000:** the radio calibrates
+  itself. There is nothing to do.
+- **FLEX-5000A:** SDR Workbench reads the radio's own calibration from its
+  memory every time it starts. There is nothing to do.
+- **ANAN G2:** starts from power and frequency figures measured on a real
+  G2, so it is close straight away. Measure your own to make it exact.
+- **Other ANANs:** start with a cautious power curve, so the PWR slider gives
+  less than it says until you measure yours.
+- **Hermes Lite 2:** its power works in its own fixed steps, so there is no
+  power curve to measure.
+
+**Measuring your power** takes about a minute a band. You need a dummy load
+and a wattmeter; never do it into an antenna.
+
+1. With the radio running, open **Settings**, then **Transmitting**, then
+   **PA gain**, and press **CALIBRATE**.
+2. Pick the band, set **Most** to the highest power you are happy with, and
+   light **DUMMY LOAD**. Nothing transmits until you do.
+3. Press **KEY**. A steady carrier goes out for four seconds. Read your
+   wattmeter, type the reading in and press **ADD**.
+4. Repeat for the next step. After about four carriers the band is done.
+   Press **SAVE**, and the PWR and TUNE sliders use the new figures at once.
+
+The first carrier is always low, and no step that would go over your Most
+is keyed. The S meter, the frequency and the watt meter are set on the
+**Calibration** and **Watt meter** pages in Settings.
 
 ## Licence keys
 

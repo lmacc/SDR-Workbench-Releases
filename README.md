@@ -173,6 +173,20 @@ The first carrier is always low, and no step that would go over your Most
 is keyed. The S meter, the frequency and the watt meter are set on the
 **Calibration** and **Watt meter** pages in Settings.
 
+## SPE Expert amplifiers
+
+SDR Workbench can show an SPE Expert 1.3K-FA, 1.5K-FA or 2K-FA on its panel
+and work its keys, through the amplifier's USB or RS-232 port: operate and standby,
+tune, the power level, antenna and input, its output, SWR, temperature and
+band, and its warnings and alarms. It can stop transmitting the moment the
+amplifier raises an alarm, and keep the amplifier on your band. Set it up in
+**Settings**, then **Connections**, then **Amplifier**.
+
+It works the way a program proven on real Expert amplifiers does, but it
+hasn't been tried on an amplifier by the author yet. If yours doesn't answer
+as it should, please open an Issue with the log the guide's chapter 27
+explains how to save. The 1K-FA isn't supported yet.
+
 ## Licence keys
 
 SDR Workbench works fully for 14 days from the first time you start it.

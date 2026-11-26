@@ -182,6 +182,11 @@ band, and its warnings and alarms. It can stop transmitting the moment the
 amplifier raises an alarm, and keep the amplifier on your band. Set it up in
 **Settings**, then **Connections**, then **Amplifier**.
 
+<img src="docs/images/amp-panel.png" alt="The AMP module on the panel" height="210"> <img src="docs/images/amp-settings.png" alt="Settings, Connections, Amplifier" height="210">
+
+The AMP module and its settings, showing the reply recorded from a real
+Expert 1.3K-FA in standby on 20 m.
+
 It works the way a program proven on real Expert amplifiers does, but it
 hasn't been tried on an amplifier by the author yet. If yours doesn't answer
 as it should, please open an Issue with the log the guide's chapter 27

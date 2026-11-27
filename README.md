@@ -31,9 +31,27 @@ any group of controls with Ctrl+E.
 Everything runs on your own computer. There is no account to make and
 nothing to sign in to.
 
-## New in 1.0.4: the EQ RACK
+## New in 1.1.0: updates from inside SDR Workbench
 
-The RACK is now the EQ RACK.
+SDR Workbench now tells you when there is a new version. Once a day it looks
+at this page, and when a new release is out, a window shows what is new in
+it. **INSTALL** downloads it, checks it against the checksum published with
+it, and installs it. SDR Workbench closes for the installer and opens again
+when it is done, with your settings as they were. It never installs while
+you transmit. **SKIP** leaves that version alone, **LATER** asks again
+tomorrow, and **HELP**, then **Check for updates**, looks straight away. To
+turn the daily look off, open **Settings**, **General**, **Options**. On a
+Mac the key is **DOWNLOAD**, and the new disk image comes down in your
+browser.
+
+You install 1.1.0 itself by hand, as before. From the next version on,
+SDR Workbench can do it for you.
+
+Also new in 1.1.0: on a TS-890S or TS-990S, the bandscope now shows the audio
+you send while you transmit, at your transmit frequency and on the side your
+mode puts it, wherever the radio shows nothing of its own.
+
+## The EQ RACK
 
 ![The EQ RACK](docs/images/eq-rack.png)
 
@@ -129,6 +147,9 @@ From the [latest release](https://github.com/lmacc/SDR-Workbench-Releases/releas
 > **More info**, then **Run anyway**. On a Mac, the README in the disk image
 > says how to open it the first time.
 
+From 1.1.0 on, SDR Workbench offers each new version itself, so you only
+download it here the first time.
+
 ## Before you start
 
 - **A network radio** (an ANAN, Hermes Lite 2 or FLEX-6000): connect it to
@@ -182,8 +203,9 @@ is keyed. The S meter, the frequency and the watt meter are set on the
 
 ## SPE Expert amplifiers
 
-SDR Workbench can show an SPE Expert 1.3K-FA, 1.5K-FA or 2K-FA on its panel
-and work its keys, through the amplifier's USB or RS-232 port: operate and standby,
+SDR Workbench can show an SPE Expert 1.3K-FA, 1.5K-FA, 1.5K-FA Taurus or
+2K-FA on its panel and work its keys, through the amplifier's USB port, or
+its RS-232 port with the cable SPE's manual shows: operate and standby,
 tune, the power level, antenna and input, its output, SWR, temperature and
 band, and its warnings and alarms. It can stop transmitting the moment the
 amplifier raises an alarm, and keep the amplifier on your band. Set it up in
@@ -194,10 +216,11 @@ amplifier raises an alarm, and keep the amplifier on your band. Set it up in
 The AMP module and its settings, showing the reply recorded from a real
 Expert 1.3K-FA in standby on 20 m.
 
-It works the way a program proven on real Expert amplifiers does, but it
-hasn't been tried on an amplifier by the author yet. If yours doesn't answer
-as it should, please open an Issue with the log the guide's chapter 27
-explains how to save. The 1K-FA isn't supported yet.
+A user's 1.5K-FA Taurus has worked with it on its USB port, its output, SWR,
+volts, current and temperature read while transmitting at over 1000 W. If
+yours doesn't answer as it should, the Amplifier page says why, and the
+guide's chapter 27 explains how to save a log for an Issue. The 1K-FA isn't
+supported yet.
 
 ## Licence keys
 
@@ -235,6 +258,8 @@ KENWOOD are trademarks of JVCKENWOOD.
 
 Please use [Issues](https://github.com/lmacc/SDR-Workbench-Releases/issues).
 Say which version you have (**HELP**, then **About SDR Workbench**, shows
-it) and which radio, and what you did just before the problem.
+it) and which radio, and what you did just before the problem. If SDR
+Workbench closed unexpectedly, the Message Centre says what happened the
+next time it starts: please include that line.
 
 73, Leslie EI5GJB

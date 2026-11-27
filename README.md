@@ -31,9 +31,9 @@ any group of controls with Ctrl+E.
 Everything runs on your own computer. There is no account to make and
 nothing to sign in to.
 
-## Coming in the next release: the EQ RACK
+## New in 1.0.4: the EQ RACK
 
-The RACK becomes the EQ RACK in the next release.
+The RACK is now the EQ RACK.
 
 ![The EQ RACK](docs/images/eq-rack.png)
 

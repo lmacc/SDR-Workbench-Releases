@@ -31,6 +31,27 @@ any group of controls with Ctrl+E.
 Everything runs on your own computer. There is no account to make and
 nothing to sign in to.
 
+## Coming in the next release: the EQ RACK
+
+The RACK becomes the EQ RACK in the next release.
+
+![The EQ RACK](docs/images/eq-rack.png)
+
+*The EQ RACK is SDR Workbench's own set of transmit audio units, from an EQ
+and compressors to a limiter, with your own VST 3 plugins among them, on
+every radio that transmits. It works like the VST HOST. Draw a line from one
+unit to the next, run units side by side and they are lined up in time, and
+set each unit's level with its own GAIN and meter. ARRANGE lays the board out
+for you. Here a Volt 476 audio interface's LINE IN 3/4 goes through eleven
+units and out of its LINE 3/4 to the radio, with a LEVEL for each.*
+
+![A unit in its own window](docs/images/eq-rack-unit.png)
+
+*Click a unit and it opens in a window of its own, with your voice live on
+its picture. Point at a style and the picture shows what it would do before
+you click it, and TRY plays your own voice through the whole rack without
+transmitting.*
+
 ## The radios it works with
 
 - **Apache Labs:** the ANAN G2, Orion MkII and Angelia, and the ANAN 10,
@@ -65,20 +86,6 @@ and filter, and the bandscope comes from the radio itself.*
 the radio's own filters, its scope and its keys.*
 
 ## A closer look
-
-![The RACK](docs/images/rack.png)
-
-*The RACK: SDR Workbench's own transmit audio units, from a phase rotator
-and EQ through compressors to a limiter, in the order you choose. Your own
-VST 3 plugins can go anywhere in the chain. Each unit shows what it is doing
-to your voice as you speak, and here the RACK takes a microphone in through
-an audio interface and sends it out again to the radio.*
-
-![Trying a style before you use it](docs/images/rack-styles.png)
-
-*Point at a style and the picture shows what it would do before you click
-it. Drag the picture's handles to change a unit, and press TRY to hear the
-whole rack on your own voice without transmitting.*
 
 ![The VST HOST](docs/images/vst-host.png)
 

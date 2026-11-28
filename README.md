@@ -3,8 +3,8 @@
 # SDR Workbench
 
 **One front panel for many radios. Use your ANAN, Hermes Lite 2, FlexRadio,
-Kenwood TS-890S or TS-990S, or a USB receiver from your Windows PC or Mac,
-with the same keys, meters and bandscope for each.**
+Kenwood TS-890S or TS-990S, ELAD FDM-DUO, or a USB receiver from your
+Windows PC or Mac, with the same keys, meters and bandscope for each.**
 
 [![Download](https://img.shields.io/github/v/release/lmacc/SDR-Workbench-Releases?label=Download)](https://github.com/lmacc/SDR-Workbench-Releases/releases/latest)
 ![Windows 10 and 11](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows)
@@ -31,25 +31,34 @@ any group of controls with Ctrl+E.
 Everything runs on your own computer. There is no account to make and
 nothing to sign in to.
 
-## New in 1.1.0: updates from inside SDR Workbench
+## New in 1.2.0: the ELAD FDM-DUO and TMate2
 
-SDR Workbench now tells you when there is a new version. Once a day it looks
-at this page, and when a new release is out, a window shows what is new in
-it. **INSTALL** downloads it, checks it against the checksum published with
-it, and installs it. SDR Workbench closes for the installer and opens again
-when it is done, with your settings as they were. It never installs while
-you transmit. **SKIP** leaves that version alone, **LATER** asks again
-tomorrow, and **HELP**, then **Check for updates**, looks straight away. To
-turn the daily look off, open **Settings**, **General**, **Options**. On a
-Mac the key is **DOWNLOAD**, and the new disk image comes down in your
-browser.
+SDR Workbench now works the **ELAD FDM-DUO**, and the receive-only
+**FDM-DUOr**, over USB. The panel works the radio's frequency and mode,
+its receive filters, AGC, NB, NR, auto notch, the attenuator, RIT, SPLIT
+and its power, from 0.3 W to 5 W. Its sound comes through the radio's own
+USB audio, which SDR Workbench finds by itself, and the bandscope comes
+from the radio's receiver USB socket, 192 kHz wide around your frequency.
+For PC audio and TUNE, SDR Workbench sets the radio's TX IN to USB just
+before it transmits, and gives the radio its own setting back after.
 
-You install 1.1.0 itself by hand, as before. From the next version on,
-SDR Workbench can do it for you.
+The **ELAD TMate2** works with any radio. Open **Settings**,
+**Connections**, **TMate2**, press **ON** and plug it in. The big knob
+tunes, E1 and E2 set the volume and the filter width, and the F keys mute,
+change the band and the mode, and work SPLIT. You can give every knob and
+key another job. Its display shows your frequency, the mode, the VFO and
+the S meter, and your power while you transmit.
 
-Also new in 1.1.0: on a TS-890S or TS-990S, the bandscope now shows the audio
-you send while you transmit, at your transmit frequency and on the side your
-mode puts it, wherever the radio shows nothing of its own.
+Also new in 1.2.0:
+
+- **TUNE** sends a steady 1 kHz tone at the TUNE power on every radio that
+  transmits, with nothing to set up. The FLEX-6000 and 8000 send their own
+  tune carrier.
+- **SPE Expert amplifiers:** the AMP group shows the amplifier's own
+  screen, and a click opens its whole front panel in a window of its own.
+  See [SPE Expert amplifiers](#spe-expert-amplifiers) below.
+
+With 1.1.0 installed, SDR Workbench offers you 1.2.0 itself.
 
 ## The EQ RACK
 
@@ -78,12 +87,15 @@ transmitting.*
 - **FlexRadio:** the FLEX-5000A and 5000C on FireWire (Windows only), and
   the FLEX-6000 and 8000 series over your network.
 - **Kenwood:** the TS-890S and TS-990S, over USB or over your network.
+- **ELAD:** the FDM-DUO, with its bandscope, and the receive-only
+  FDM-DUOr, over USB.
 - **USB receivers:** RTL-SDR dongles, the Airspy R2, Mini, HF+ and HF+
   Discovery, the SDRplay RSP family, and the RX888 MkII (Windows only).
 - **The simulator,** so you can learn the panel before you connect anything.
 
-The FLEX-6000 and 8000 series and the EU1SW Brick 2 follow their makers'
-published information but have not yet been tried on a real radio.
+The FLEX-6000 and 8000 series, the ELAD FDM-DUO and FDM-DUOr, and the
+EU1SW Brick 2 follow their makers' published information but have not yet
+been tried on a real radio, and neither has the ELAD TMate2.
 
 ## The same panel on every radio
 
@@ -164,6 +176,10 @@ download it here the first time.
   SDRplay RSP needs SDRplay's own API from sdrplay.com.
 - **A FLEX-5000A:** SDR Workbench brings FlexRadio's own driver and offers
   to install it.
+- **An ELAD FDM-DUO:** connect its CAT USB socket for control and its
+  receiver USB socket for the bandscope. Install the radio's USB driver
+  from ELAD's FDM-SW2, and close FDM-SW2 while SDR Workbench runs. On a
+  Mac, install libusb with Homebrew: `brew install libusb`.
 
 The user guide is inside the application, under **HELP**, then
 **User guide**. It covers every control and how to set everything up, with
@@ -211,10 +227,22 @@ band, and its warnings and alarms. It can stop transmitting the moment the
 amplifier raises an alarm, and keep the amplifier on your band. Set it up in
 **Settings**, then **Connections**, then **Amplifier**.
 
-<img src="docs/images/amp-panel.png" alt="The AMP module on the panel" height="210"> <img src="docs/images/amp-settings.png" alt="Settings, Connections, Amplifier" height="210">
+The AMP group shows the amplifier's own screen, just as the amplifier
+shows it, in SPE's colours, with its lamps under it, menus and all. Click
+the screen and the amplifier's front panel opens in a window of its own,
+laid out like the model that is answering, so you can work it as you would
+at the amplifier. SDR Workbench knows the model from its answers, so there
+is nothing to choose.
 
-The AMP module and its settings, showing the reply recorded from a real
-Expert 1.3K-FA in standby on 20 m.
+<img src="docs/images/amp-panel.png" alt="The AMP group with the amplifier's own screen" height="170"> <img src="docs/images/amp-settings.png" alt="Settings, Connections, Amplifier" height="170">
+
+The AMP group and its settings, with the screen recorded from a real
+Expert 1.3K-FA in standby on 40 m.
+
+![The amplifier's front panel in its own window](docs/images/amp-front-panel.png)
+
+The front panel in its own window, with the amplifier's keys and lamps
+either side of its screen.
 
 A user's 1.5K-FA Taurus has worked with it on its USB port, its output, SWR,
 volts, current and temperature read while transmitting at over 1000 W. If
@@ -250,8 +278,8 @@ equipment, loss of data, and interference caused to others. You are
 responsible for your station: for how it is set up, and for operating it
 within your licence and the regulations that apply to you.
 
-SDR Workbench is not made by or endorsed by Apache Labs, FlexRadio or
-JVCKENWOOD. ANAN is a trademark of Apache Labs. TS-890S, TS-990S and
+SDR Workbench is not made by or endorsed by Apache Labs, FlexRadio,
+JVCKENWOOD or ELAD. ANAN is a trademark of Apache Labs. TS-890S, TS-990S and
 KENWOOD are trademarks of JVCKENWOOD.
 
 ## Problems and suggestions
